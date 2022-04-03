@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -48,28 +49,21 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({children}) {
-  const [open, setOpen] = React.useState(false);
+export default function CustomizedDialogs({children, modalClickOpen, modalClose, open}) {
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={modalClickOpen}>
         등록
       </Button>
       <BootstrapDialog
-        onClose={handleClose}
+        onClose={modalClose}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={modalClose}>
+          재료 단건 등록
         </BootstrapDialogTitle>
         <DialogContent dividers>
             {children}

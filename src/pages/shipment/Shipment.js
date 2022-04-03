@@ -22,6 +22,15 @@ export const Shipment = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  const [open, setOpen] = React.useState(false);
+
+  const modalClickOpen = () => {
+    setOpen(true);
+  };
+  const modalClose = () => {
+    setOpen(false);
+  };
+
   // excel
   const handleFile = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -100,6 +109,11 @@ export const Shipment = () => {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tables.length) : 0;
   
+  // register table
+  const registerTable = (material) => {
+    setTables([material]);
+  }
+
   return (
     <Container maxWidth="xl">
         <div >
@@ -109,8 +123,15 @@ export const Shipment = () => {
             <DateRangePick />
             <Grid container>
               <Grid item xs={1}>
-                <ModalInput>
-                  <RegisterMaterial />
+                <ModalInput
+                    modalClickOpen={modalClickOpen}
+                    modalClose={modalClose}
+                    open={open}
+                >
+                  <RegisterMaterial 
+                    registerTable={registerTable}
+                    modalClose={modalClose}
+                    />
                 </ModalInput>
               </Grid>
               <Grid item xs={1}>
