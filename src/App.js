@@ -4,7 +4,7 @@ import Create from './pages/Create'
 import Ex01 from './pages/Ex01'
 import Ex02 from './pages/ex02/Ex02'
 import Chart01 from './pages/Chart01'
-import Shipment from './pages/Shipment'
+import Shipment from './pages/shipment/Shipment'
 import Table01 from './pages/Table01'
 import Table02 from './pages/Table02'
 

@@ -1,0 +1,38 @@
+[
+    {
+      "id": "wear_date",
+      "label": "입고일자"
+    },
+    {
+      "id": "product_num",
+      "label": "재료번호"
+    },
+    {
+        "id": "product_name",
+        "label": "품명"
+    },
+    {
+        "id": "weight",
+        "label": "중량"
+    },
+    {
+        "id": "thickness",
+        "label": "두께"
+    },
+    {
+        "id": "width",
+        "label": "폭"
+    },
+    {
+        "id": "length",
+        "label": "길이"
+    },
+    {
+        "id": "company",
+        "label": "구매처"
+    },
+    {
+        "id": "manager",
+        "label": "구매담당자"
+    }
+  ]
