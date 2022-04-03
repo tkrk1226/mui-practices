@@ -7,7 +7,7 @@ const EnhancedTableToolbar = ({numSelected}) => {
   return (
     <Toolbar
       sx={{
-        pl: { sm: 2 },
+        pl: { sm: 1 },
         pr: { xs: 1, sm: 1 },
         ...(numSelected > 0 && {
           bgcolor: (theme) =>

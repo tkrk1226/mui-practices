@@ -10,6 +10,9 @@ import EnhancedTableToolbar from './component/EnhancedTableToolbar';
 import EnhancedTableHead from './component/EnhancedTableHead';
 import EnhancedTableBody from './component/EnhancedTableBody';
 import DateRangePick from './component/DateRangePick';
+import ModalInput from './component/ModalInput';
+import RegisterMaterial from './component/RegisterMaterial';
+import { Button, Grid, InputLabel } from "@mui/material";
 
 export const Shipment = () => {
   // excel
@@ -101,17 +104,58 @@ export const Shipment = () => {
     <Container maxWidth="xl">
         <div >
           <h1>1.구입재료 입고 처리</h1>
-          <input
-            type="file"
-            onChange={(e) => {
-              const file = e.target.files[0];
-              handleFile(file);
-            }}
-          />
-          <button onClick={handleOnExport}>Export</button>
           <Box sx={{ width: '100%' }}>
           <Paper sx={{ width: '100%', mb: 2 }}>
             <DateRangePick />
+            <Grid container>
+              <Grid item xs={1}>
+                <ModalInput>
+                  <RegisterMaterial />
+                </ModalInput>
+              </Grid>
+              <Grid item xs={1}>
+                <Button variant="contained">수정</Button>
+              </Grid>
+              <Grid item xs={1}>
+                <Button 
+                  variant="contained"
+                  onClick={handleOnExport}
+                  >
+                    Export
+                  </Button>
+              </Grid>
+              <Grid item xs={1}>
+                <InputLabel 
+                  style={{
+                    "margin" : "0 0 0 20px",     
+                    "border" : "1px solid #1976d2",
+                    "borderRadius" : "3px",
+                    "height" : "34.5px",
+                    "fontSize" : "0.875rem",
+                    "textAlign" : "center",
+                    "display" : "flex",
+                    "justifyContent" : "center",
+                    "alignItems" : "center",
+                    "color" : "#fff",
+                    "backgroundColor" : "#1976d2",
+                    "boxShadow": "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)"
+                  }}
+                  htmlFor="excel_import"
+                  >
+                    엑셀 등록</InputLabel>
+                <input
+                  id="excel_import"
+                  type="file"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    handleFile(file);
+                  }}
+                  style={{     
+                    "display" : "none"
+                  }}
+                />
+              </Grid>
+          </Grid>
             <EnhancedTableToolbar numSelected={selected.length} />
             <TableContainer>
               <Table

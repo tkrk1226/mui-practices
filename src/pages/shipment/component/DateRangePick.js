@@ -11,7 +11,7 @@ export default function ResponsiveDateRangePicker() {
   const [value, setValue] = React.useState([null, null]);
 
   return (
-    <nav style={{border: '2px solid gray'}}>
+    <nav>
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Stack direction="row" spacing={3}>
         <Box p={3}>
