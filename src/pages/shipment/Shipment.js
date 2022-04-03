@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import EnhancedTableToolbar from './component/EnhancedTableToolbar';
 import EnhancedTableHead from './component/EnhancedTableHead';
 import EnhancedTableBody from './component/EnhancedTableBody';
+import DateRangePick from './component/DateRangePick';
 
 export const Shipment = () => {
   // excel
@@ -110,6 +111,7 @@ export const Shipment = () => {
           <button onClick={handleOnExport}>Export</button>
           <Box sx={{ width: '100%' }}>
           <Paper sx={{ width: '100%', mb: 2 }}>
+            <DateRangePick />
             <EnhancedTableToolbar numSelected={selected.length} />
             <TableContainer>
               <Table
